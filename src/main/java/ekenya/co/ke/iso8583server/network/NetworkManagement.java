@@ -62,7 +62,7 @@ public class NetworkManagement {
         ISOMsg response  = (ISOMsg) isoMsg.clone();
 
         response.setMTI("0810");
-        response.set(39, "00");
+        response.set(39, "000");
 
         response.unset(48);
 
@@ -79,7 +79,7 @@ public class NetworkManagement {
             String clientIp = socket.getInetAddress().getHostAddress();
 
             if (hashMap.containsKey(clientIp)) {
-                field39 = "00";
+                field39 = "000";
                 hashMap.remove(clientIp);
             } else {
                 field39 = "002"; // no connection found
@@ -104,7 +104,7 @@ public class NetworkManagement {
             String clientIp = socket.getInetAddress().getHostAddress();
 
             if (hashMap.containsKey(clientIp)) {
-                field39 = "00"; // connection okay
+                field39 = "000"; // connection okay
             } else {
                 field39 = "002"; // no connection found
             }
