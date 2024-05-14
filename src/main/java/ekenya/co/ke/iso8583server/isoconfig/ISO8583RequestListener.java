@@ -38,7 +38,6 @@ public class ISO8583RequestListener implements ISORequestListener, Configurable 
                     return ProcessTransactions.processReversalTransaction(isoSource, isoMsg);
                 default:
                     throw new RuntimeException();
-
             }
         } catch (ISOException | IOException e) {
             throw new RuntimeException(e);
